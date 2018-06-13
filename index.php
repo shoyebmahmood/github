@@ -3,109 +3,157 @@
 
 <head>
     <meta charset="UTF-8">
-    <?php wp_head();?>
+    <title>Hello Dolly</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        h1.heading {
+            font-family: "Arial Black";
+            width: 700px;
+            margin: auto;
+            margin-bottom: 70px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid #ccc;
+        }
 
+        h3.tagline {
+            font-family: Arial;
+            margin: auto;
+            font-size: 18px;
+            margin-top: 50px;
+            margin-bottom: 15px;
+            width: 700px;
+            text-align: center;
+        }
+
+        h2.post-title {
+            margin-bottom: 30px;
+        }
+
+        .post {
+            margin-bottom: 50px;
+        }
+
+        .post p {
+            font-family: "Helvetica Neue";
+            line-height: 1.7em;
+            font-size: 18px;
+        }
+
+        .post .row:nth-child(2) {
+            padding-bottom: 50px;
+            border-bottom: 1px solid #ccc;
+
+        }
+
+        .post:last-child .row:nth-child(2) {
+            border-bottom: none;
+        }
+
+        .footer {
+            padding-bottom: 10px;
+            padding-top: 10px;
+            background-color: #222;
+            color: #ccc;
+        }
+
+        .tags li {
+            color: #3D9970;
+        }
+
+    </style>
 </head>
 
-<body<?php body_class( );?>>
+<body>
     <div class="header">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="tagline">
-                    <?php bloginfo("description");?>
-                    </h3>
-
-                    <h1 class="align-self-center display-1 text-center heading">
-                        <?php bloginfo("name");?>
-                    </h1>
-
+                    <h3 class="tagline">No act of kindness, no matter how small, is ever wasted</h3>
+                    <h1 class="align-self-center display-1 text-center heading">Hello Beautiful</h1>
                 </div>
             </div>
         </div>
     </div>
     <div class="posts">
-        <?php
-        while(have_posts()):
-            the_post();
-            ?>
-            <div class="post"<?php post_class();?>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2 class="post-title">
-                            <a href="<?php the_permalink( );?>"</a><?php the_title();?>
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <p>
-                                <strong><?php the_author();?></strong>
-                                <br/>
-                                <?php echo get_the_date();?>
-                            </p>
-                            <?php
-                     echo get_the_tag_list( "<ul class=\"list-unstyled\"><li>", "</li><li>","</li></ul>"); 
-                            ?>
-
-
-                        </div>
-                        <div class="col-md-8">
-                            <p>
-                                <?php if(has_post_thumbnail()){
-                the_post_thumbnail("large","class=>'img-fluid'");
-                                }
-                ?>
-                            </p>
-                            <?php
-                            if(is_single()){
-                                the_content();
-                            }else{
-                                the_excerpt();
-                            }
-                            
-                            ?>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <?php
-        endwhile;
-        ?>
-            <div class="container post-pagination">
-                    <div class="row">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-8">
-                            <?php 
-
-                            the_posts_pagination(array("screen_reader_text"=>' ',
-                                "prev_text"=>'New Posts',
-                                    "next_text"=>'Old Posts'));
-        ?>
-
-                        
-
+        <div class="post">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="post-title">This is a beautiful day in Dhaka!</h2>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>
+                            <strong>John Doe</strong><br/> 15th May, 2018
+                        </p>
+                        <ul class="list-unstyled">
+                            <li>dhaka</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8">
+                        <p>
+                            <img class="img-fluid" src="https://images.pexels.com/photos/301929/pexels-photo-301929.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=800" alt="Post Title">
+                        </p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deserunt dicta doloribus error, harum, illo impedit incidunt ipsam ipsum necessitatibus nihil perferendis perspiciatis provident quasi reiciendis saepe sequi sint, voluptatum?
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium adipisci aspernatur beatae consequatur dicta distinctio ea eaque enim eos est et eveniet exercitationem expedita hic, id, minima molestias necessitatibus optio perferendis quaerat quidem reiciendis rem reprehenderit repudiandae saepe sunt totam ullam unde velit. A ab animi aperiam at beatae cum cupiditate dignissimos distinctio ducimus eaque est exercitationem illo labore laudantium magni maxime molestias odio quibusdam quidem, sequi soluta sunt ullam voluptate voluptates voluptatum? Dolores earum enim esse est, illo nemo sit velit. Aperiam, aspernatur cum explicabo illum iusto labore nam nobis quibusdam ratione sed suscipit unde voluptate voluptatibus. Alias distinctio est et laborum quis tempore! Autem consequuntur cupiditate
+
+                        </p>
+                    </div>
+                </div>
+
             </div>
-</div>
+        </div>
 
+        <div class="post">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="post-title">This is a beautiful day in Dhaka!</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>
+                            <strong>John Doe</strong><br/> 15th May, 2018
+                        </p>
+                        <div class="tags">
+                            <ul class="list-unstyled">
+                                <li>weather</li>
+                                <li>blog</li>
+                                <li>dhaka</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <p>
+                            <img class="img-fluid" src="https://images.pexels.com/photos/707344/pexels-photo-707344.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Post Title">
+                        </p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deserunt dicta doloribus error, harum, illo impedit incidunt ipsam ipsum necessitatibus nihil perferendis perspiciatis provident quasi reiciendis saepe sequi sint, voluptatum?
+                        </p>
 
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium adipisci aspernatur beatae consequatur dicta distinctio ea eaque enim eos est et eveniet exercitationem expedita hic, id, minima molestias necessitatibus optio perferendis quaerat quidem reiciendis rem reprehenderit repudiandae saepe sunt totam ullam unde velit. A ab animi aperiam at beatae cum cupiditate dignissimos distinctio ducimus eaque est exercitationem illo labore laudantium magni maxime molestias odio quibusdam quidem, sequi soluta sunt ullam voluptate voluptates voluptatum? Dolores earum enim esse est, illo nemo sit velit. Aperiam, aspernatur cum explicabo illum iusto labore nam nobis quibusdam ratione sed suscipit unde voluptate voluptatibus. Alias distinctio est et laborum quis tempore! Autem consequuntur cupiditate
 
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <div class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <center>&copy; shoyebmahmood - All Rights Reserved</center>
+                    &copy; LWHH - All Rights Reserved
                 </div>
             </div>
         </div>
     </div>
-
-    <?php wp_footer();?>
 </body>
 
 </html>
